@@ -5,12 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
+	public float delayInSeconds = 2f;
+
     public void LoadGameOver() {
-		SceneManager.LoadScene("Game Over");
+		StartCoroutine(WaitAndLoad());
 	}
 
 	public void LoadGameScene() {
 		SceneManager.LoadScene("Game Scene");
+		FindObjectOfType<GameSession>().ResetScore();
 	}
 
 	public void LoadStartMenu() {
@@ -19,5 +22,10 @@ public class Level : MonoBehaviour
 
 	public void QuitGame() {
 		Application.Quit();
+	}
+
+	IEnumerator WaitAndLoad() {
+		yield return new WaitForSeconds(delayInSeconds);
+		SceneManager.LoadScene("Game Over");
 	}
 }
