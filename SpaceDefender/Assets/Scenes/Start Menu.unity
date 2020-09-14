@@ -279,6 +279,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Menu Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 931661507377402474, guid: 6c87d6b05a25d44e986a38f7b979cbee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 931661507377402478, guid: 6c87d6b05a25d44e986a38f7b979cbee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -599,6 +604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 6343663426670124250, guid: 16a4728b415c24c379688229b582d026,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16a4728b415c24c379688229b582d026, type: 3}
