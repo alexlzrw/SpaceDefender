@@ -15,12 +15,6 @@ public class Player : MonoBehaviour
     public float projectileSpeed = 10f;
     public float projectileFiringPeriod = 0.15f;
 
-    public AudioClip deathSound;
-    [Range(0, 1)] public float deathSoundVolume = 0.75f;
-
-    public AudioClip shootSound;
-    [Range(0, 1)] public float shootSoundVolume = 0.25f;
-
     float xMin, xMax;
     float yMin, yMax;
 
@@ -58,7 +52,7 @@ public class Player : MonoBehaviour
         {
             GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, projectileSpeed);
-            AudioSource.PlayClipAtPoint(shootSound, Camera.main.transform.position, shootSoundVolume);
+            FindObjectOfType<AudioManager>().Play("Lasershooter");
 
             yield return new WaitForSeconds(projectileFiringPeriod);
         }
@@ -87,8 +81,9 @@ public class Player : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collision) {
 		DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
         if (!damageDealer) { return; }
-		ProcessHit(damageDealer);
-	}
+        ProcessHit(damageDealer);
+        
+    }
 
 	private void ProcessHit(DamageDealer damageDealer) {
 		health -= damageDealer.GetDamage();
@@ -102,8 +97,9 @@ public class Player : MonoBehaviour
 
     private void Die() {
         FindObjectOfType<Level>().LoadGameOver();
+        FindObjectOfType<AudioManager>().Play("PlayerDeath");
         Destroy(gameObject);
-        AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, deathSoundVolume);
+        
     }
 
     public int GetHealth() {
