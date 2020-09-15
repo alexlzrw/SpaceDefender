@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour{
 
     public Sound[] sounds;
     public static AudioManager instance;
-
+    
     void Awake() {
 
         if (instance == null) {
@@ -24,11 +24,13 @@ public class AudioManager : MonoBehaviour{
 
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+             
         }
     }
 
     void Start() {
-        Play("Theme");
+        Play("Theme");       
     }
 
     public void Play(string name) {
