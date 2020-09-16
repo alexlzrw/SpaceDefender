@@ -4875,31 +4875,12 @@ Transform:
   m_Father: {fileID: 1913092153}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -270, y: 0, z: 0}
---- !u!1 &807877026 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2450680060030600795, guid: edf30277853d44e57bc48bb5f04bb860,
-    type: 3}
-  m_PrefabInstance: {fileID: 2450680060838346745}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &807877027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2450680060030600796, guid: edf30277853d44e57bc48bb5f04bb860,
     type: 3}
   m_PrefabInstance: {fileID: 2450680060838346745}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &807877030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807877026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b954f4a428c548279cf4735c385c4c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.02
 --- !u!1 &1412697979
 GameObject:
   m_ObjectHideFlags: 0
@@ -4989,7 +4970,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.99, y: 0.75}
+    oldSize: {x: 1.65, y: 1.25}
     newSize: {x: 0.99, y: 0.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
