@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
 	private void Fire() {
 		GameObject laser = Instantiate(projectile, transform.position, Quaternion.identity);
 		laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -projectileSpeed);
-		FindObjectOfType<AudioManager>().Play("Enemyshooter");
+		FindObjectOfType<AudioManager>().Play("EnemyShoot");
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {

@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
-{
+public class Player : MonoBehaviour {
     [Header("Player")]
     public float moveSpeed = 10f;
     public float padding = 1f;
@@ -13,37 +12,29 @@ public class Player : MonoBehaviour
     [Header("Projectile")]
     public GameObject laserPrefab;
     public float projectileSpeed = 10f;
-    public float projectileFiringPeriod = 0.15f;
+    public float projectileFiringPeriod = .15f;
 
-    float xMin, xMax;
-    float yMin, yMax;
 
-    Coroutine firingCoroutine;
+    
+
+    private Vector3 offset;
 
     private void Start()
-    {
-        SetUpMoveBoundaries();
+    {      
+        
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        Move();
+    private void Awake() {
         Fire();
     }
 
-    private void Fire()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            firingCoroutine = StartCoroutine(FireContinuously());
-        }
+    
+    void Update() {
+      
+    }
 
-        if (Input.GetButtonUp("Fire1"))
-        {
-            StopCoroutine(firingCoroutine);
-        }
+    private void Fire() {
+        StartCoroutine(FireContinuously());
     }
 
     IEnumerator FireContinuously()
@@ -52,33 +43,28 @@ public class Player : MonoBehaviour
         {
             GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, projectileSpeed);
-            FindObjectOfType<AudioManager>().Play("Lasershooter");
+            FindObjectOfType<AudioManager>().Play("PlayerShoot");
 
             yield return new WaitForSeconds(projectileFiringPeriod);
         }
     }
 
-    private void SetUpMoveBoundaries()
-    {
-        Camera cam = Camera.main;
-        xMin = cam.ViewportToWorldPoint(new Vector3(0f, 0f, 0f)).x + padding;
-        xMax = cam.ViewportToWorldPoint(new Vector3(1f, 0f, 0f)).x - padding;
-        yMin = cam.ViewportToWorldPoint(new Vector3(0f, 0f, 0f)).y + padding;
-        yMax = cam.ViewportToWorldPoint(new Vector3(0f, 1f, 0f)).y - padding;
+    void OnMouseDown() {
+
+        if (Input.GetMouseButton(0)) {
+            offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
+        }
     }
 
-    private void Move()
-    {
-        var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
-        var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
 
-        var newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
-        var newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
-
-        transform.position = new Vector2(newXPos, newYPos);
+    void OnMouseDrag() {
+        Vector3 newPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f);
+        transform.position = Camera.main.ScreenToWorldPoint(newPosition) + offset;
     }
 
-	private void OnTriggerEnter2D(Collider2D collision) {
+
+
+    private void OnTriggerEnter2D(Collider2D collision) {
 		DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
         if (!damageDealer) { return; }
         ProcessHit(damageDealer);
