@@ -4881,6 +4881,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2450680060838346745}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &972712993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 972712994}
+  m_Layer: 0
+  m_Name: Player Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &972712994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972712993}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1412697979
 GameObject:
   m_ObjectHideFlags: 0
@@ -10193,6 +10223,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
+      propertyPath: myPoint.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
       propertyPath: deathSoundVolume
       value: 0.031
       objectReference: {fileID: 0}
@@ -10217,15 +10252,30 @@ PrefabInstance:
       propertyPath: projectileSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: myPoint
+      value: 
+      objectReference: {fileID: 972712993}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: myPoint.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: myPoint.Array.data[1]
+      value: 
+      objectReference: {fileID: 972712993}
     - target: {fileID: 2092828583446903391, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.08
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903391, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.85
+      value: -11.67
       objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903391, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
