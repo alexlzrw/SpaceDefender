@@ -8,20 +8,23 @@ public class Player : MonoBehaviour {
     public float moveSpeed = 10f;
     public float padding = 1f;
     public int health = 100;
+    public GameObject myPoint;
+    private bool NeedToGo = false;
 
     [Header("Projectile")]
     public GameObject laserPrefab;
     public float projectileSpeed = 10f;
     public float projectileFiringPeriod = .15f;
+    public float delayFiring = 1f;
 
 
-    
+
+
 
     private Vector3 offset;
 
-    private void Start()
-    {      
-        
+    private void Start() {
+        NeedToGo = true;  
     }
 
     private void Awake() {
@@ -30,15 +33,17 @@ public class Player : MonoBehaviour {
 
     
     void Update() {
-      
+        MoveToPoint();
     }
 
-    private void Fire() {
+    private void Fire() {  
         StartCoroutine(FireContinuously());
+        
     }
 
     IEnumerator FireContinuously()
     {
+        yield return new WaitForSeconds(delayFiring);
         while (true)
         {
             GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
@@ -60,6 +65,17 @@ public class Player : MonoBehaviour {
     void OnMouseDrag() {
         Vector3 newPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f);
         transform.position = Camera.main.ScreenToWorldPoint(newPosition) + offset;
+    }
+
+
+    private void MoveToPoint() {
+        if (NeedToGo) {
+            transform.position = Vector2.MoveTowards(transform.position, myPoint.transform.position, 5f * Time.deltaTime);
+        }
+
+        if (Vector2.Distance(transform.position,myPoint.transform.position) < 0.01){
+            NeedToGo = false;
+        }
     }
 
 
