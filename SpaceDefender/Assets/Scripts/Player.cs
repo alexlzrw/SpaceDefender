@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
     public float padding = 1f;
     public int health = 100;
     public GameObject myPoint;
-    private bool NeedToGo = false;
+    private bool needToGo = false;
 
     [Header("Projectile")]
     public GameObject laserPrefab;
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
     private Vector3 offset;
 
     private void Start() {
-        NeedToGo = true;  
+        needToGo = true;  
     }
 
     private void Awake() {
@@ -69,12 +69,12 @@ public class Player : MonoBehaviour {
 
 
     private void MoveToPoint() {
-        if (NeedToGo) {
+        if (needToGo) {
             transform.position = Vector2.MoveTowards(transform.position, myPoint.transform.position, 5f * Time.deltaTime);
         }
 
         if (Vector2.Distance(transform.position,myPoint.transform.position) < 0.01){
-            NeedToGo = false;
+            needToGo = false;
         }
     }
 
