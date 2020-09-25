@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,15 +8,30 @@ public class GameSession : MonoBehaviour
 	int score = 0;
 
 	public ProgressBar progressBar;
-	public int MaxScoreLevel = 3000;
+    public float timeToLevel = 100f;
+    private float timeInSeconds = 0f;
 
     private void Start() {
-        
+        progressBar.MaxScoreInLevel(timeToLevel);
+    }
+
+    private void Update() {
+        TimeToLevelEnd();
+    }
+
+    public void TimeToLevelEnd() {
+        timeInSeconds += Time.deltaTime;
+
+        if (timeInSeconds >= timeToLevel) {
+            FindObjectOfType<Level>().LoadGameOver();
+        }
+        else {
+            progressBar.SetScore(timeInSeconds);
+        }
     }
 
     private void Awake() {
         SetUpSingleton();
-        progressBar.MaxScoreInLevel(MaxScoreLevel);
 	}
 
     private void SetUpSingleton() {
@@ -32,12 +48,9 @@ public class GameSession : MonoBehaviour
         return score;	
 	}
 
+
 	public void AddScore(int score) {
 		this.score += score;
-		progressBar.SetScore(this.score);
-		if (this.score == MaxScoreLevel) {
-			FindObjectOfType<Level>().LoadGameOver();
-        }
 	}
 
 	public void ResetScore() {

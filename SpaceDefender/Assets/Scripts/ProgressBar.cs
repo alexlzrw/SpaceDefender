@@ -7,14 +7,15 @@ public class ProgressBar : MonoBehaviour {
 
     public Slider slider;
 
-    public void SetScore(int score) {
-        slider.value = score;
+    public void SetScore(float number) {
+        slider.value = number;
     }
 
-    public void MaxScoreInLevel(int score) {
-        slider.value = score;
-        slider.maxValue = score;
+    public void MaxScoreInLevel(float number) {
+        slider.value = number;
+        slider.maxValue = number;
     }
+
 
    
 }

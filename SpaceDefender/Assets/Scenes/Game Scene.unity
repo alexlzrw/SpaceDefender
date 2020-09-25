@@ -5295,8 +5295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: 744}
-  m_SizeDelta: {x: 400, y: 20}
+  m_AnchoredPosition: {x: 14, y: 737.62}
+  m_SizeDelta: {x: 522.1657, y: 32.75341}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717323494
 MonoBehaviour:
@@ -10958,6 +10958,11 @@ PrefabInstance:
       propertyPath: progressBar
       value: 
       objectReference: {fileID: 1717323494}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: timeToLevel
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4974149183909781579, guid: 1710d378141434f73922f13624b6a282,
         type: 3}
       propertyPath: m_Name
