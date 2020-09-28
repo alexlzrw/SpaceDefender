@@ -16,6 +16,4 @@ public class ProgressBar : MonoBehaviour {
         slider.maxValue = number;
     }
 
-
-   
 }
