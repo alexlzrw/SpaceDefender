@@ -4887,18 +4887,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7468245307546432326}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1126610849 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1717323494, guid: cff348c8915714da489534a1b17bed4b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2726513065248930979}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c689847830cc45f982520f0f4f1a2d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1412697979
 GameObject:
   m_ObjectHideFlags: 0
@@ -10579,6 +10567,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4600177161037497660, guid: cff348c8915714da489534a1b17bed4b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cff348c8915714da489534a1b17bed4b, type: 3}
 --- !u!1001 &4866908252679896894
@@ -10721,7 +10714,7 @@ PrefabInstance:
         type: 3}
       propertyPath: progressBar
       value: 
-      objectReference: {fileID: 1126610849}
+      objectReference: {fileID: 0}
     - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
         type: 3}
       propertyPath: timeToLevel
