@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  scoreValue: 150
   shotCounter: 0
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
@@ -178,10 +179,6 @@ MonoBehaviour:
   deathVFX: {fileID: 3865617474251194547, guid: e1967ae99f7bc4639abb86ecef425180,
     type: 3}
   durationOfExplosion: 1
-  deathSound: {fileID: 8300000, guid: a44ba99bfca8641b6bef3e8dc6eb2e50, type: 3}
-  deathSoundVolume: 0.75
-  shootSound: {fileID: 8300000, guid: 6036b8406d68b414284780671caab700, type: 3}
-  shootSoundVolume: 0.25
 --- !u!114 &-8397271149113357447
 MonoBehaviour:
   m_ObjectHideFlags: 0
