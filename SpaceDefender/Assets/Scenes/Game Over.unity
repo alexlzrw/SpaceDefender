@@ -576,6 +576,10 @@ PrefabInstance:
       propertyPath: m_firstOverflowCharacterIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 975866517, guid: cff348c8915714da489534a1b17bed4b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1677620223, guid: cff348c8915714da489534a1b17bed4b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -688,6 +692,16 @@ PrefabInstance:
     - target: {fileID: 2726513064418192902, guid: cff348c8915714da489534a1b17bed4b,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600177159904397645, guid: cff348c8915714da489534a1b17bed4b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600177161037497660, guid: cff348c8915714da489534a1b17bed4b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

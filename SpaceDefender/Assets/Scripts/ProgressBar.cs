@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour {
 
     public Slider slider;
+    GameSession gameSession;
 
-    public void SetScore(float number) {
-        slider.value = number;
+    private void Start() {
+        gameSession = FindObjectOfType<GameSession>();
+
+        slider.maxValue = gameSession.timeToLevel;
     }
 
-    public void MaxScoreInLevel(float number) {
-        slider.value = number;
-        slider.maxValue = number;
+    private void Update() {
+        slider.value = gameSession.timeInSeconds;
     }
 
 }

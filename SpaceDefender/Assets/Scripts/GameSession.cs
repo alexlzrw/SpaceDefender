@@ -7,12 +7,12 @@ public class GameSession : MonoBehaviour
 {
 	int score = 0;
 
-	public ProgressBar progressBar;
+
     public float timeToLevel = 100f;
-    private float timeInSeconds = 0f;
+    public float timeInSeconds = 0f;
 
     private void Start() {
-        progressBar.MaxScoreInLevel(timeToLevel);
+        
     }
 
     private void Update() {
@@ -24,9 +24,6 @@ public class GameSession : MonoBehaviour
 
         if (timeInSeconds >= timeToLevel) {
             FindObjectOfType<Level>().LoadGameOver();
-        }
-        else {
-            progressBar.SetScore(timeInSeconds);
         }
     }
 
