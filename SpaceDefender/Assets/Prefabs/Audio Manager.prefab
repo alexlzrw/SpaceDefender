@@ -46,16 +46,31 @@ MonoBehaviour:
   sounds:
   - name: PlayerDeath
     clip: {fileID: 8300000, guid: 3527e8e5805bd436e9bec6259b6b0be0, type: 3}
+    loop: 0
     volume: 0.541
     pitch: 1.32
     source: {fileID: 0}
   - name: Theme
     clip: {fileID: 8300000, guid: 3665bb30ca5ed44c2868e8d4a25808d4, type: 3}
+    loop: 1
     volume: 0.201
     pitch: 1.03
     source: {fileID: 0}
-  - name: Lasershooter
+  - name: PlayerShoot
     clip: {fileID: 8300000, guid: be3089e3c44ca453da964672c5c82f6e, type: 3}
+    loop: 0
+    volume: 0.201
+    pitch: 1.03
+    source: {fileID: 0}
+  - name: EnemyDeath
+    clip: {fileID: 8300000, guid: a44ba99bfca8641b6bef3e8dc6eb2e50, type: 3}
+    loop: 0
+    volume: 0.201
+    pitch: 1.03
+    source: {fileID: 0}
+  - name: EnemyShoot
+    clip: {fileID: 8300000, guid: 6036b8406d68b414284780671caab700, type: 3}
+    loop: 0
     volume: 0.201
     pitch: 1.03
     source: {fileID: 0}
