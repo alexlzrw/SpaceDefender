@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy Wave Config")]
+[CreateAssetMenu(menuName = "Enemy Wave Config", order = 52)]
 public class WaveConfig : ScriptableObject
 {
     public GameObject enemyPrefab;

@@ -45,6 +45,14 @@ public class GameSession : MonoBehaviour
         return score;	
 	}
 
+    public bool Buy(int cost) {
+        if (cost > score) {
+            return false;
+		}
+        score -= cost;
+        FindObjectOfType<AudioManager>().Play("BuySound");
+        return true;
+	}
 
 	public void AddScore(int score) {
 		this.score += score;
