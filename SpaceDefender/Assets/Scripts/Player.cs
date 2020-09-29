@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
+
     [Header("Player")]
     public float moveSpeed = 10f;
     public float padding = 1f;
@@ -17,6 +18,9 @@ public class Player : MonoBehaviour {
     public float projectileFiringPeriod = .15f;
     public float delayFiring = 1f;
 
+    [Range(0f, 1f)]
+    public float slow = 0.5f;
+
 
 
 
@@ -24,7 +28,8 @@ public class Player : MonoBehaviour {
     private Vector3 offset;
 
     private void Start() {
-        needToGo = true;  
+        needToGo = true;
+        Time.timeScale = slow;
     }
 
     private void Awake() {
@@ -55,9 +60,16 @@ public class Player : MonoBehaviour {
     }
 
     void OnMouseDown() {
-
-        if (Input.GetMouseButton(0)) {
+        if (Input.GetMouseButtonDown(0)) {
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
+            Time.timeScale = 1f;
+        } 
+        
+    }
+
+    private void OnMouseUp() {
+        if (Input.GetMouseButtonUp(0)) {
+            Time.timeScale = slow;
         }
     }
 
@@ -71,6 +83,7 @@ public class Player : MonoBehaviour {
     private void MoveToPoint() {
         if (needToGo) {
             transform.position = Vector2.MoveTowards(transform.position, myPoint.transform.position, 5f * Time.deltaTime);
+            
         }
 
         if (Vector2.Distance(transform.position,myPoint.transform.position) < 0.01){
