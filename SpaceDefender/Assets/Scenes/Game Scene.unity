@@ -121,24 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &272099995 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7870774772422029495, guid: de1877452569b4decaedca696bec2b28,
-    type: 3}
-  m_PrefabInstance: {fileID: 2092828584378043747}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &295320081 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-    type: 3}
-  m_PrefabInstance: {fileID: 2092828584378043747}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbcc9582372ec47e2b47bd4a05cf2a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &768309684
 GameObject:
   m_ObjectHideFlags: 0
@@ -4989,18 +4971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc74cde7f4194bb1a1dcd8934a3c20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1539173141 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1076943508, guid: de1877452569b4decaedca696bec2b28,
-    type: 3}
-  m_PrefabInstance: {fileID: 2092828584378043747}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1694258980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5075,18 +5045,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d894502bda621498b9fd5dbb456280a9, type: 3}
---- !u!114 &1747286904 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1532009356, guid: de1877452569b4decaedca696bec2b28,
-    type: 3}
-  m_PrefabInstance: {fileID: 2092828584378043747}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1900984803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10024,93 +9982,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 103641089, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 466769878, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 466769878, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 466769878, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 466769878, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 295320081}
-    - target: {fileID: 466769878, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LevelUpParallelLasers
-      objectReference: {fileID: 0}
-    - target: {fileID: 466769878, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 466769879, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_Color.r
-      value: 0.24313726
-      objectReference: {fileID: 0}
-    - target: {fileID: 466769879, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9098039
-      objectReference: {fileID: 0}
-    - target: {fileID: 466769879, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_Color.b
-      value: 0.8901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 737329065, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1368855095, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1408354378, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1589027906, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1911093312, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2098581495, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2098581495, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2098581495, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2098581495, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 295320081}
-    - target: {fileID: 2098581495, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LevelUpChargedLasers
-      objectReference: {fileID: 0}
-    - target: {fileID: 2098581495, guid: de1877452569b4decaedca696bec2b28, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2043924409810260430, guid: de1877452569b4decaedca696bec2b28,
+    - target: {fileID: 2092828583446903384, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903385, guid: de1877452569b4decaedca696bec2b28,
@@ -10120,194 +9994,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
-      propertyPath: firingSystems.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: laserFiringPoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: laserFirePoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: chargedLaserFirePoints.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[0].firePoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[1].firePoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[2].firePoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[3].firePoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
       propertyPath: myPoint
       value: 
       objectReference: {fileID: 972712993}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: laserFiringPoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 272099995}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: laserFirePoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 272099995}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: chargedLaserPrefab
-      value: 
-      objectReference: {fileID: 7003113376843539253, guid: 9a9f3ed8cfa3547b99473e4b654acff3,
-        type: 3}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[0].projectilePrefab
-      value: 
-      objectReference: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
-        type: 3}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[0].projectileSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[0].projectileFiringPeriod
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[0].firePoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 272099995}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[1].projectilePrefab
-      value: 
-      objectReference: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
-        type: 3}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[1].firePoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 272099995}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[1].projectileSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[1].projectileFiringPeriod
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[0].isActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[0].activeFromStart
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[2].projectilePrefab
-      value: 
-      objectReference: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
-        type: 3}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[2].firePoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 272099995}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[2].projectileSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[2].projectileFiringPeriod
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[3].projectilePrefab
-      value: 
-      objectReference: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
-        type: 3}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[3].firePoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 272099995}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[3].projectileSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[3].projectileFiringPeriod
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[1].isActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[1].name
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[0].name
-      value: ParallelLasers
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[1].systemName
-      value: ChargedLasers
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[0].systemName
-      value: ParallelLasers
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[2].systemName
-      value: Diagonal Lasers
-      objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903391, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10363,107 +10052,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5640732804370677745, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6615013672908847208, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: parallelLasers.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: chargedLasers.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: parallelChargedLasers.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: parallelLasers.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 51fa1f4669c4a419cbd4db83d37506b2,
-        type: 2}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: parallelLasers.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: d3aded68feed344f8a09df8cafada022,
-        type: 2}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: parallelLasersText
-      value: 
-      objectReference: {fileID: 1747286904}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: chargedLasersText
-      value: 
-      objectReference: {fileID: 1539173141}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: chargedLasers.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 88d2cbf22558a4b909f4fef31ee32787,
-        type: 2}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: chargedLasers.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 369f7212a83224ded80000e9036f9a18,
-        type: 2}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: chargedLasers.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6d50095d3283c474cab803c219ff30d5,
-        type: 2}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: parallelChargedLasers.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0794252028029426b88bf0b5f9738d04,
-        type: 2}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: parallelChargedLasers.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: d0ac8f8c8aa9c4c26b449fec26b829e7,
-        type: 2}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: parallelChargedLasers.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: d35985f36b7e5449491fe50e92c22996,
-        type: 2}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: parallelChargedLasers.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0794252028029426b88bf0b5f9738d04,
-        type: 2}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: parallelChargedLasers.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: d0ac8f8c8aa9c4c26b449fec26b829e7,
-        type: 2}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: parallelChargedLasers.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: d35985f36b7e5449491fe50e92c22996,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de1877452569b4decaedca696bec2b28, type: 3}
 --- !u!1001 &2450680060838346745
@@ -10810,6 +10398,105 @@ PrefabInstance:
       propertyPath: timeToLevel
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: patrolShipPrefab
+      value: 
+      objectReference: {fileID: 5776825510897778193, guid: 70bc602a5861c42a0a3cbf83955e01ba,
+        type: 3}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.key0.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.key1.r
+      value: 0.9458765
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.key1.g
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.key1.b
+      value: 0.13932894
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.key1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.key2.r
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.key2.g
+      value: 0.1306067
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.key2.b
+      value: 0.07413671
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.ctime1
+      value: 32768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.atime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: enemyDifficultColor.m_NumColorKeys
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: battleshipPrefab
+      value: 
+      objectReference: {fileID: 7382711476507353506, guid: c7248ed413d514846be8696befaa3d3e,
+        type: 3}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: vectorPrefab
+      value: 
+      objectReference: {fileID: 7382711476507353506, guid: 213e5c6cfe77746a2919aa3499ceef28,
+        type: 3}
+    - target: {fileID: 4974149183909781577, guid: 1710d378141434f73922f13624b6a282,
+        type: 3}
+      propertyPath: carrierPrefab
+      value: 
+      objectReference: {fileID: 7382711476507353506, guid: a5d5fbb07e1f84f4ba608918360a31b3,
+        type: 3}
     - target: {fileID: 4974149183909781579, guid: 1710d378141434f73922f13624b6a282,
         type: 3}
       propertyPath: m_Name
@@ -10829,28 +10516,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
-    - target: {fileID: 6609473706029889737, guid: 9b2a2f08907354b3482850f2061f8e97,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609473706029889738, guid: 9b2a2f08907354b3482850f2061f8e97,
-        type: 3}
-      propertyPath: waveConfigs.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609473706029889738, guid: 9b2a2f08907354b3482850f2061f8e97,
-        type: 3}
-      propertyPath: waveConfigs.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: a63c9f965f9fa413a8c8939440c2acce,
-        type: 2}
-    - target: {fileID: 6609473706029889738, guid: 9b2a2f08907354b3482850f2061f8e97,
-        type: 3}
-      propertyPath: waveConfigs.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: bfa9ee12b2798445e80681dce3a6d9a7,
-        type: 2}
     - target: {fileID: 6609473706029889739, guid: 9b2a2f08907354b3482850f2061f8e97,
         type: 3}
       propertyPath: m_LocalPosition.x

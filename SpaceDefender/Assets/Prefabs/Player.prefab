@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.24313727, g: 0.909804, b: 0.89019614, a: 0.5882353}
+  m_Color: {r: 0.24313726, g: 0.9098039, b: 0.8901961, a: 0.5882353}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -267,7 +267,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 466769879}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8333201773666794151}
+        m_MethodName: LevelUpParallelLasers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &699414136
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +526,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737329063}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -934,7 +945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1368855096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1089,7 +1100,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408354376}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -1478,7 +1489,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589027904}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -1824,7 +1835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1911093316
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1926,9 +1937,21 @@ MonoBehaviour:
   parallelChargedLasersLevel: 0
   parallelLasers:
   - {fileID: 11400000, guid: 06d38f91824164f3e8ce8ca4cbdff688, type: 2}
+  - {fileID: 11400000, guid: 51fa1f4669c4a419cbd4db83d37506b2, type: 2}
+  - {fileID: 11400000, guid: d3aded68feed344f8a09df8cafada022, type: 2}
   diagonalLasers: []
-  chargedLasers: []
-  parallelChargedLasers: []
+  chargedLasers:
+  - {fileID: 11400000, guid: 88d2cbf22558a4b909f4fef31ee32787, type: 2}
+  - {fileID: 11400000, guid: 369f7212a83224ded80000e9036f9a18, type: 2}
+  - {fileID: 11400000, guid: 6d50095d3283c474cab803c219ff30d5, type: 2}
+  parallelChargedLasers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  parallelLasersText: {fileID: 1532009356}
+  diagonalLasersText: {fileID: 0}
+  chargedLasersText: {fileID: 1076943508}
+  parallelChargedLasersText: {fileID: 0}
 --- !u!1 &2098581493
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,7 +2071,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2098581496}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8333201773666794151}
+        m_MethodName: LevelUpChargedLasers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2043924409810260430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,7 +2098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4224523596110655858
 Transform:
   m_ObjectHideFlags: 0
@@ -2224,14 +2258,28 @@ MonoBehaviour:
   padding: 1
   health: 100
   myPoint: {fileID: 0}
-  firePoints: {fileID: 4040269313906575827}
-  laserPrefab: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
-    type: 3}
-  projectileSpeed: 10
-  projectileFiringPeriod: 0.15
-  delayFiring: 1
+  firingSystems:
+  - isActive: 1
+    systemName: ParallelLasers
+    projectilePrefab: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
+      type: 3}
+    firePoints:
+    - {fileID: 7870774772422029495}
+    projectileSpeed: 10
+    projectileFiringPeriod: 0.15
+    projectileFiringPeriodCounter: 0
+  - isActive: 0
+    systemName: ChargedLasers
+    projectilePrefab: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
+      type: 3}
+    firePoints:
+    - {fileID: 7870774772422029495}
+    projectileSpeed: 10
+    projectileFiringPeriod: 0.15
+    projectileFiringPeriodCounter: 0
   slow: 0.442
   upgradeCanvas: {fileID: 1911093312}
+  delayFiring: 1
 --- !u!1 &3239854066356486061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,7 +2389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1258981259077119490
 Transform:
   m_ObjectHideFlags: 0
@@ -2373,7 +2421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1566113110312330642
 Transform:
   m_ObjectHideFlags: 0

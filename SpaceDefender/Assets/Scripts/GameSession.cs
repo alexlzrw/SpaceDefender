@@ -9,17 +9,21 @@ public class GameSession : MonoBehaviour
 
     public int enemyHealthLevel = 1;
     public int enemySpeedLevel = 1;
-    public int maxSpeedLevel = 3;
+    public int maxSpeedLevel = 2;
     public int maxHealthLevel = 3;
 
     public float timeToLevel = 100f;
     public float timeInSeconds = 0f;
 
+    private void Awake() {
+        SetUpSingleton();
+    }
+
     private void Update() {
         TimeToLevelEnd();
     }
 
-    public void TimeToLevelEnd() {
+	public void TimeToLevelEnd() {
         timeInSeconds += Time.deltaTime;
 
         if (timeInSeconds >= timeToLevel) {
@@ -36,10 +40,6 @@ public class GameSession : MonoBehaviour
     public string GetLevel() {
         return enemyHealthLevel + "-" + enemySpeedLevel;
     }
-
-    private void Awake() {
-        SetUpSingleton();
-	}
 
     private void SetUpSingleton() {
         int numberGameSessions = FindObjectsOfType(GetType()).Length;
