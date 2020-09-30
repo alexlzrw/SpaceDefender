@@ -57,7 +57,7 @@ public class UpgradeManager : MonoBehaviour {
     //}
 
     private bool IsUpgradeMaxLevel(int currentLevel, int maxLevel) {
-        return currentLevel >= maxLevel;
+        return currentLevel >= maxLevel - 1;
 	}
 
     private void UpdateUI() {
