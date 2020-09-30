@@ -12,17 +12,14 @@ public class Player : MonoBehaviour {
     public GameObject myPoint;
     private bool needToGo = false;
 
-    [Header("Projectile")]
-    public Transform firePoints;
-    public GameObject laserPrefab;
-    public float projectileSpeed = 10f;
-    public float projectileFiringPeriod = .15f;
-    public float delayFiring = 1f;
+    [Header("Firing Systems")]
+    public FiringSystem[] firingSystems;
 
     [Header("Other")]
     [Range(0f, 1f)]
     public float slow = 0.5f;
     public GameObject upgradeCanvas;
+	public float delayFiring = 1f;
 
     private Vector3 offset;
 
@@ -30,43 +27,37 @@ public class Player : MonoBehaviour {
         needToGo = true;
     }
 
-    private void Awake() {
-        Fire();
-    }
-
-
     private void Update() {
         MoveToPoint();
+        //Fire();
+        FireContinuously();
     }
 
-    private void Fire() {
-        StartCoroutine(FireContinuously());
-    }
-
-    private IEnumerator FireContinuously() {
-        yield return new WaitForSeconds(delayFiring);
-        while (true) {
-            foreach (Transform firePoint in firePoints) {
-                if (firePoint.gameObject.activeSelf) {
-                    if (firePoint.childCount > 0) {
-                        foreach (Transform childFirePoint in firePoint) {
-                            GameObject laser = Instantiate(laserPrefab, childFirePoint.position, Quaternion.identity);
-                            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, projectileSpeed);
+	private void FireContinuously() {
+		foreach (FiringSystem firingSystem in firingSystems) {
+            if (firingSystem.isActive) {
+                if (firingSystem.projectileFiringPeriodCounter >= firingSystem.projectileFiringPeriod) {
+                    foreach (Transform firePoint in firingSystem.firePoints) {
+                        if (firePoint.childCount > 0) {
+                            foreach (Transform childFirePoint in firePoint) {
+                                GameObject laser = Instantiate(firingSystem.projectilePrefab, childFirePoint.position, Quaternion.identity);
+                                laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, firingSystem.projectileSpeed);
+                            }
+                        } else {
+                            GameObject laser = Instantiate(firingSystem.projectilePrefab, firePoint.position, Quaternion.identity);
+                            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, firingSystem.projectileSpeed);
                         }
                         FindObjectOfType<AudioManager>().Play("PlayerShoot");
-                    } else {
-                        GameObject laser = Instantiate(laserPrefab, firePoint.position, Quaternion.identity);
-                        laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, projectileSpeed);
-                        FindObjectOfType<AudioManager>().Play("PlayerShoot");
                     }
+                    firingSystem.projectileFiringPeriodCounter = 0f;
+                } else {
+                    firingSystem.projectileFiringPeriodCounter += Time.deltaTime;
                 }
             }
+		}
+	}
 
-            yield return new WaitForSeconds(projectileFiringPeriod);
-        }
-    }
-
-    private void OnMouseDown() {
+	private void OnMouseDown() {
         if (Input.GetMouseButtonDown(0)) {
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
             Time.timeScale = 1f;
@@ -83,12 +74,10 @@ public class Player : MonoBehaviour {
         }
     }
 
-
     private void OnMouseDrag() {
         Vector3 newPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f);
         transform.position = Camera.main.ScreenToWorldPoint(newPosition) + offset;
     }
-
 
     private void MoveToPoint() {
         if (needToGo) {
@@ -141,18 +130,26 @@ public class Player : MonoBehaviour {
 	}
 
     public void SetUpgrade(UpgradeItem upgradeItem) {
-        laserPrefab = upgradeItem.LaserPrefab;
-        // Must be in separate method with disabling old OneShot point
-        foreach (Transform firePoint in firePoints) {
-            if (firePoint.name == upgradeItem.FirePointsName) {
-                firePoint.gameObject.SetActive(true);
+        foreach (FiringSystem firingSystem in firingSystems) {
+            if (firingSystem.systemName == upgradeItem.ItemName) {
+                firingSystem.isActive = true;
+                firingSystem.projectilePrefab = upgradeItem.LaserPrefab;
+
+                firingSystem.firePoints.Clear();
+                foreach (string firePointName in upgradeItem.FirePointsNames) {
+                    Transform newFirePoints = GameObject.Find(firePointName).transform;
+                    if (newFirePoints.childCount > 0) {
+                        foreach (Transform newFirePoint in newFirePoints) {
+                            firingSystem.firePoints.Add(newFirePoint);
+                        }
+                    } else {
+                        firingSystem.firePoints.Add(newFirePoints);
+                    }
+                }
+
+                firingSystem.projectileSpeed = upgradeItem.ProjectileSpeed;
+                firingSystem.projectileFiringPeriod = upgradeItem.ProjectileFiringPeriod;
             }
-            // SHOULD BE A BETTER WAY TO DISABlE OneShot POINT
-            if (firePoint.name == "OneShot") {
-                firePoint.gameObject.SetActive(false);
-            }
-        }
-        projectileSpeed = upgradeItem.ProjectileSpeed;
-        projectileFiringPeriod = upgradeItem.ProjectileFiringPeriod;
-    }
+		}
+	}
 }

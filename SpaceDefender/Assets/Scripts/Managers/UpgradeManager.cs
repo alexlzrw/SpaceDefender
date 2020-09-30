@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UpgradeManager : MonoBehaviour {
 
@@ -38,23 +39,33 @@ public class UpgradeManager : MonoBehaviour {
 
         if (!IsUpgradeMaxLevel(parallelLasersLevel, parallelLasers.Length)) {
             parallelLasersLevel++;
+            parallelLasersText.text = parallelLasers[parallelLasersLevel].ScoreCost.ToString();
+        } else {
+            parallelLasersText.text = "MAX";
+            parallelLasersText.GetComponentInParent<Image>().color = Color.gray;
+            parallelLasersText.GetComponentInParent<Button>().enabled = false;
         }
 
-        UpdateUI();
+        //UpdateUI();
     }
 
-    //public void LevelUpChargedLasers() {
-    //    if (!FindObjectOfType<GameSession>().Buy(chargedLasers[chargedLasersLevel].ScoreCost)) {
-    //        return;
-    //    }
-    //    player.SetUpgrade(chargedLasers[chargedLasersLevel]);
+	public void LevelUpChargedLasers() {
+		if (!FindObjectOfType<GameSession>().Buy(chargedLasers[chargedLasersLevel].ScoreCost)) {
+			return;
+		}
+		player.SetUpgrade(chargedLasers[chargedLasersLevel]);
 
-    //    if (!IsUpgradeMaxLevel(chargedLasersLevel, chargedLasers.Length)) {
-    //        chargedLasersLevel++;
-    //    }
+		if (!IsUpgradeMaxLevel(chargedLasersLevel, chargedLasers.Length)) {
+			chargedLasersLevel++;
+            chargedLasersText.text = chargedLasers[chargedLasersLevel].ScoreCost.ToString();
+        } else {
+            chargedLasersText.text = "MAX";
+            chargedLasersText.GetComponentInParent<Image>().color = Color.gray;
+            chargedLasersText.GetComponentInParent<Button>().enabled = false;
+        }
 
-    //    UpdateUI();
-    //}
+		//UpdateUI();
+	}
 
     private bool IsUpgradeMaxLevel(int currentLevel, int maxLevel) {
         return currentLevel >= maxLevel - 1;
@@ -62,6 +73,6 @@ public class UpgradeManager : MonoBehaviour {
 
     private void UpdateUI() {
         parallelLasersText.text = parallelLasers[parallelLasersLevel].ScoreCost.ToString();
-        //chargedLasersText.text = chargedLasers[chargedLasersLevel].ScoreCost.ToString();
+        chargedLasersText.text = chargedLasers[chargedLasersLevel].ScoreCost.ToString();
     }
 }
