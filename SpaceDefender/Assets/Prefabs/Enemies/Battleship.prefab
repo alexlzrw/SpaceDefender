@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4714713972379412564}
   - component: {fileID: -8397271149113357447}
   m_Layer: 9
-  m_Name: Enemy (0)
+  m_Name: Battleship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d70aa8674440044b0a8b80a331312db9, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 95431aa12621a40a79cc18f062f03375, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.93, y: 0.84}
+    oldSize: {x: 1.55, y: 1.4}
     newSize: {x: 0.93, y: 0.84}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -168,14 +168,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c67ede0c0e64e738420253a3f48565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 350
   scoreValue: 150
   shotCounter: 0
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
   projectile: {fileID: 9126309978442468445, guid: 0faad275cc93449e9907c79c16c6e127,
     type: 3}
-  projectileSpeed: 10
+  projectileSpeed: 9
   deathVFX: {fileID: 3865617474251194547, guid: e1967ae99f7bc4639abb86ecef425180,
     type: 3}
   durationOfExplosion: 1
