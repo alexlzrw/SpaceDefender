@@ -28,7 +28,6 @@ public class Player : MonoBehaviour {
 
     private void Start() {
         needToGo = true;
-        Time.timeScale = slow;
     }
 
     private void Awake() {
@@ -94,10 +93,9 @@ public class Player : MonoBehaviour {
     private void MoveToPoint() {
         if (needToGo) {
             transform.position = Vector2.MoveTowards(transform.position, myPoint.transform.position, 5f * Time.deltaTime);
-
         }
 
-        if (Vector2.Distance(transform.position, myPoint.transform.position) < 0.01) {
+        if (Vector2.Distance(transform.position, myPoint.transform.position) < 0.01 || Input.GetMouseButtonDown(0)) {
             needToGo = false;
         }
     }
