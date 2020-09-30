@@ -25,7 +25,6 @@ public class Player : MonoBehaviour {
 
     private void Start() {
         needToGo = true;
-        Time.timeScale = slow;
     }
 
     private void Update() {
@@ -85,7 +84,7 @@ public class Player : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, myPoint.transform.position, 5f * Time.deltaTime);
         }
 
-        if (Vector2.Distance(transform.position, myPoint.transform.position) < 0.01) {
+        if (Vector2.Distance(transform.position, myPoint.transform.position) < 0.01 || Input.GetMouseButtonDown(0)) {
             needToGo = false;
         }
     }
