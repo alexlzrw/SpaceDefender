@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a19932ba2be1c4d03bd4c608159417df, type: 3}
-  m_Name: 1_lvl
+  m_Name: 3_lvl_ChargedLasers
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
+  itemName: ChargedLasers
+  laserPrefab: {fileID: 7003113376843539253, guid: 9a9f3ed8cfa3547b99473e4b654acff3,
     type: 3}
-  scoreCost: 1000
-  firePointsName: TwoParallel
-  projectileSpeed: 10
-  projectileFiringPeriod: 0.15
+  scoreCost: 7000
+  firePointsNames:
+  - TwoParallel
+  projectileSpeed: 7
+  projectileFiringPeriod: 0.5
