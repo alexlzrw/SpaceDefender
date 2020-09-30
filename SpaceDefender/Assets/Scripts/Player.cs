@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
     [Range(0f, 1f)]
     public float slow = 0.5f;
     public GameObject upgradeCanvas;
-	public float delayFiring = 1f;
+    public float delayFiring = 1f;
 
     private Vector3 offset;
 
@@ -29,12 +29,11 @@ public class Player : MonoBehaviour {
 
     private void Update() {
         MoveToPoint();
-        //Fire();
         FireContinuously();
     }
 
-	private void FireContinuously() {
-		foreach (FiringSystem firingSystem in firingSystems) {
+    private void FireContinuously() {
+        foreach (FiringSystem firingSystem in firingSystems) {
             if (firingSystem.isActive) {
                 if (firingSystem.projectileFiringPeriodCounter >= firingSystem.projectileFiringPeriod) {
                     foreach (Transform firePoint in firingSystem.firePoints) {
@@ -54,14 +53,13 @@ public class Player : MonoBehaviour {
                     firingSystem.projectileFiringPeriodCounter += Time.deltaTime;
                 }
             }
-		}
-	}
+        }
+    }
 
-	private void OnMouseDown() {
+    private void OnMouseDown() {
         if (Input.GetMouseButtonDown(0)) {
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
-            Time.timeScale = 1f;
-
+            needToGo = false;
             HideUpgradeCanvas();
         }
     }
@@ -73,19 +71,21 @@ public class Player : MonoBehaviour {
             ShowUpgradeCanvas();
         }
     }
+    
 
     private void OnMouseDrag() {
         Vector3 newPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f);
         transform.position = Camera.main.ScreenToWorldPoint(newPosition) + offset;
+        Time.timeScale = 1f;
     }
 
     private void MoveToPoint() {
         if (needToGo) {
             transform.position = Vector2.MoveTowards(transform.position, myPoint.transform.position, 5f * Time.deltaTime);
         }
-
-        if (Vector2.Distance(transform.position, myPoint.transform.position) < 0.01 || Input.GetMouseButtonDown(0)) {
+        if (transform.position == myPoint.transform.position) {
             needToGo = false;
+            Time.timeScale = slow;
         }
     }
 
