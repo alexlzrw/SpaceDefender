@@ -74,7 +74,6 @@ public class Player : MonoBehaviour {
             ShowUpgradeCanvas();
         }
     }
-    
 
     private void OnMouseDrag() {
         Vector3 newPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f);

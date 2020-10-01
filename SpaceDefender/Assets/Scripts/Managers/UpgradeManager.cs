@@ -18,18 +18,34 @@ public class UpgradeManager : MonoBehaviour {
     public TextMeshProUGUI diagonalLasersText;
     public TextMeshProUGUI chargedLasersText;
 
-    Player player;
+    public Color notEnoughScoreColor = Color.red;
+
+    private Player player;
+    private GameSession gameSession;
+
+    private Color parallelLasersButtonColor;
+    private Color diagonalLasersButtonColor;
+    private Color chargedLasersButtonColor;
 
 	private void Awake() {
         player = FindObjectOfType<Player>();
+        gameSession = FindObjectOfType<GameSession>();
 	}
 
 	private void Start() {
+        parallelLasersButtonColor = parallelLasersText.GetComponentInParent<Image>().color;
+        diagonalLasersButtonColor = diagonalLasersText.GetComponentInParent<Image>().color;
+        chargedLasersButtonColor = chargedLasersText.GetComponentInParent<Image>().color;
+        ButtonAccessibility();
         UpdateUI();
 	}
 
+	private void Update() {
+        ButtonAccessibility();
+	}
+
 	public void LevelUpParallelLasers() {
-        if (!FindObjectOfType<GameSession>().Buy(parallelLasers[parallelLasersLevel].ScoreCost)) {
+        if (!gameSession.Buy(parallelLasers[parallelLasersLevel].ScoreCost)) {
             return;
 		}
         player.SetUpgrade(parallelLasers[parallelLasersLevel]);
@@ -42,30 +58,10 @@ public class UpgradeManager : MonoBehaviour {
             parallelLasersText.GetComponentInParent<Image>().color = Color.gray;
             parallelLasersText.GetComponentInParent<Button>().enabled = false;
         }
-
-        //UpdateUI();
     }
 
-	public void LevelUpChargedLasers() {
-		if (!FindObjectOfType<GameSession>().Buy(chargedLasers[chargedLasersLevel].ScoreCost)) {
-			return;
-		}
-		player.SetUpgrade(chargedLasers[chargedLasersLevel]);
-
-		if (!IsUpgradeMaxLevel(chargedLasersLevel, chargedLasers.Length)) {
-			chargedLasersLevel++;
-            chargedLasersText.text = chargedLasers[chargedLasersLevel].ScoreCost.ToString();
-        } else {
-            chargedLasersText.text = "MAX";
-            chargedLasersText.GetComponentInParent<Image>().color = Color.gray;
-            chargedLasersText.GetComponentInParent<Button>().enabled = false;
-        }
-
-		//UpdateUI();
-	}
-
     public void LevelUpDiagonalLasers() {
-        if (!FindObjectOfType<GameSession>().Buy(diagonalLasers[diagonalLasersLevel].ScoreCost)) {
+        if (!gameSession.Buy(diagonalLasers[diagonalLasersLevel].ScoreCost)) {
             return;
         }
         player.SetUpgrade(diagonalLasers[diagonalLasersLevel]);
@@ -78,8 +74,43 @@ public class UpgradeManager : MonoBehaviour {
             diagonalLasersText.GetComponentInParent<Image>().color = Color.gray;
             diagonalLasersText.GetComponentInParent<Button>().enabled = false;
         }
+    }
 
-        //UpdateUI();
+    public void LevelUpChargedLasers() {
+		if (!gameSession.Buy(chargedLasers[chargedLasersLevel].ScoreCost)) {
+			return;
+		}
+		player.SetUpgrade(chargedLasers[chargedLasersLevel]);
+
+		if (!IsUpgradeMaxLevel(chargedLasersLevel, chargedLasers.Length)) {
+			chargedLasersLevel++;
+            chargedLasersText.text = chargedLasers[chargedLasersLevel].ScoreCost.ToString();
+        } else {
+            chargedLasersText.text = "MAX";
+            chargedLasersText.GetComponentInParent<Image>().color = Color.gray;
+            chargedLasersText.GetComponentInParent<Button>().enabled = false;
+        }
+	}
+
+    private void ButtonAccessibility() {
+        int score = gameSession.GetScore();
+        if (parallelLasers[parallelLasersLevel].ScoreCost > score) {
+            parallelLasersText.GetComponentInParent<Image>().color = notEnoughScoreColor;
+        } else {
+            parallelLasersText.GetComponentInParent<Image>().color = parallelLasersButtonColor;
+        }
+
+        if (diagonalLasers[diagonalLasersLevel].ScoreCost > score) {
+            diagonalLasersText.GetComponentInParent<Image>().color = notEnoughScoreColor;
+        } else {
+            diagonalLasersText.GetComponentInParent<Image>().color = diagonalLasersButtonColor;
+        }
+
+        if (chargedLasers[chargedLasersLevel].ScoreCost > score) {
+            chargedLasersText.GetComponentInParent<Image>().color = notEnoughScoreColor;
+        } else {
+            chargedLasersText.GetComponentInParent<Image>().color = parallelLasersButtonColor;
+        }
     }
 
     private bool IsUpgradeMaxLevel(int currentLevel, int maxLevel) {
@@ -88,6 +119,7 @@ public class UpgradeManager : MonoBehaviour {
 
     private void UpdateUI() {
         parallelLasersText.text = parallelLasers[parallelLasersLevel].ScoreCost.ToString();
+        diagonalLasersText.text = diagonalLasers[diagonalLasersLevel].ScoreCost.ToString();
         chargedLasersText.text = chargedLasers[chargedLasersLevel].ScoreCost.ToString();
     }
 }
