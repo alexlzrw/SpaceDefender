@@ -37,14 +37,17 @@ public class Player : MonoBehaviour {
             if (firingSystem.isActive) {
                 if (firingSystem.projectileFiringPeriodCounter >= firingSystem.projectileFiringPeriod) {
                     foreach (Transform firePoint in firingSystem.firePoints) {
-                        if (firePoint.childCount > 0) {
-                            foreach (Transform childFirePoint in firePoint) {
-                                GameObject laser = Instantiate(firingSystem.projectilePrefab, childFirePoint.position, Quaternion.identity);
-                                laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, firingSystem.projectileSpeed);
-                            }
-                        } else {
+                        if (!firingSystem.isDiagonal) {
                             GameObject laser = Instantiate(firingSystem.projectilePrefab, firePoint.position, Quaternion.identity);
                             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, firingSystem.projectileSpeed);
+                        } else {
+                            if (firePoint.name == "Left") {
+                                GameObject laser = Instantiate(firingSystem.projectilePrefab, firePoint.position, Quaternion.AngleAxis(-15, Vector3.back));
+                                laser.GetComponent<Rigidbody2D>().velocity = new Vector2(-firingSystem.projectileSpeed / 3f, firingSystem.projectileSpeed);
+                            } else if (firePoint.name == "Right") {
+                                GameObject laser = Instantiate(firingSystem.projectilePrefab, firePoint.position, Quaternion.AngleAxis(15, Vector3.back));
+                                laser.GetComponent<Rigidbody2D>().velocity = new Vector2(firingSystem.projectileSpeed / 3f, firingSystem.projectileSpeed);
+                            }
                         }
                         FindObjectOfType<AudioManager>().Play("PlayerShoot");
                     }
