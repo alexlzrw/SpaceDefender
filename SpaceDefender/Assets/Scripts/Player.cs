@@ -44,7 +44,10 @@ public class Player : MonoBehaviour {
                             }
                         } else {
                             GameObject laser = Instantiate(firingSystem.projectilePrefab, firePoint.position, Quaternion.identity);
-                            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, firingSystem.projectileSpeed);
+                            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(firingSystem.projectileRotation, firingSystem.projectileSpeed);
+
+                            GameObject laser2 = Instantiate(firingSystem.projectilePrefab, firePoint.position, Quaternion.identity);
+                            laser2.GetComponent<Rigidbody2D>().velocity = new Vector2(firingSystem.projectileRotation2, firingSystem.projectileSpeed);
                         }
                         FindObjectOfType<AudioManager>().Play("PlayerShoot");
                     }
@@ -60,6 +63,7 @@ public class Player : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
             needToGo = false;
+
             HideUpgradeCanvas();
         }
     }

@@ -10,6 +10,7 @@ public class FiringSystem {
     public List<Transform> firePoints;
     public float projectileSpeed = 10f;
     public float projectileFiringPeriod = .15f;
-
+    public float projectileRotation = 3f;
+    public float projectileRotation2 = -3f; 
     public float projectileFiringPeriodCounter = 0f;
 }

@@ -67,6 +67,25 @@ public class UpgradeManager : MonoBehaviour {
 		//UpdateUI();
 	}
 
+    public void LevelUpDiagonalLasers() {
+        if (!FindObjectOfType<GameSession>().Buy(diagonalLasers[diagonalLasersLevel].ScoreCost)) {
+            return;
+        }
+        player.SetUpgrade(diagonalLasers[diagonalLasersLevel]);
+
+        if (!IsUpgradeMaxLevel(diagonalLasersLevel, diagonalLasers.Length)) {
+            diagonalLasersLevel++;
+            diagonalLasersText.text = diagonalLasers[diagonalLasersLevel].ScoreCost.ToString();
+        }
+        else {
+            diagonalLasersText.text = "MAX";
+            diagonalLasersText.GetComponentInParent<Image>().color = Color.gray;
+            diagonalLasersText.GetComponentInParent<Button>().enabled = false;
+        }
+
+        //UpdateUI();
+    }
+
     private bool IsUpgradeMaxLevel(int currentLevel, int maxLevel) {
         return currentLevel >= maxLevel - 1;
 	}
@@ -74,5 +93,6 @@ public class UpgradeManager : MonoBehaviour {
     private void UpdateUI() {
         parallelLasersText.text = parallelLasers[parallelLasersLevel].ScoreCost.ToString();
         chargedLasersText.text = chargedLasers[chargedLasersLevel].ScoreCost.ToString();
+        diagonalLasersText.text = diagonalLasers[diagonalLasersLevel].ScoreCost.ToString();
     }
 }

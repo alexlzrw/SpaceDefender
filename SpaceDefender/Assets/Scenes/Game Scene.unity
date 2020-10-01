@@ -121,6 +121,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &126047252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1481212274, guid: de1877452569b4decaedca696bec2b28,
+    type: 3}
+  m_PrefabInstance: {fileID: 2092828584378043747}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &283510032 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5499568418669951311, guid: de1877452569b4decaedca696bec2b28,
+    type: 3}
+  m_PrefabInstance: {fileID: 2092828584378043747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &768309684
 GameObject:
   m_ObjectHideFlags: 0
@@ -4887,6 +4905,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7468245307546432326}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1230447895 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5608707828561487865, guid: de1877452569b4decaedca696bec2b28,
+    type: 3}
+  m_PrefabInstance: {fileID: 2092828584378043747}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1364415064 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
+    type: 3}
+  m_PrefabInstance: {fileID: 2092828584378043747}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbcc9582372ec47e2b47bd4a05cf2a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1412697979
 GameObject:
   m_ObjectHideFlags: 0
@@ -9982,6 +10018,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 699414138, guid: de1877452569b4decaedca696bec2b28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 699414138, guid: de1877452569b4decaedca696bec2b28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 699414138, guid: de1877452569b4decaedca696bec2b28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 699414138, guid: de1877452569b4decaedca696bec2b28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1364415064}
+    - target: {fileID: 699414138, guid: de1877452569b4decaedca696bec2b28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LevelUpDiagonalLasers
+      objectReference: {fileID: 0}
+    - target: {fileID: 699414138, guid: de1877452569b4decaedca696bec2b28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903384, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
       propertyPath: m_Color.a
@@ -9994,9 +10054,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
+      propertyPath: firingSystems.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[2].firePoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
       propertyPath: myPoint
       value: 
       objectReference: {fileID: 972712993}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[2].systemName
+      value: DiagonalLasers
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[2].projectilePrefab
+      value: 
+      objectReference: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
+        type: 3}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[2].firePoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 283510032}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[2].projectileSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[2].projectileFiringPeriod
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[2].projectileRotation
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[0].projectileRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[2].firePoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1230447895}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[1].projectileRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[1].projectileRotation2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[2].projectileRotation2
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: firingSystems.Array.data[0].projectileRotation2
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903391, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10005,7 +10136,7 @@ PrefabInstance:
     - target: {fileID: 2092828583446903391, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.67
+      value: -11.56
       objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903391, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
@@ -10052,6 +10183,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: diagonalLasers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: parallelChargedLasers.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: chargedLasers.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 993b1b64100f14e639fc3336dc546792,
+        type: 2}
+    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: diagonalLasers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 993b1b64100f14e639fc3336dc546792,
+        type: 2}
+    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: diagonalLasersText
+      value: 
+      objectReference: {fileID: 126047252}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de1877452569b4decaedca696bec2b28, type: 3}
 --- !u!1001 &2450680060838346745
