@@ -37,17 +37,17 @@ public class Player : MonoBehaviour {
             if (firingSystem.isActive) {
                 if (firingSystem.projectileFiringPeriodCounter >= firingSystem.projectileFiringPeriod) {
                     foreach (Transform firePoint in firingSystem.firePoints) {
-                        if (firePoint.childCount > 0) {
-                            foreach (Transform childFirePoint in firePoint) {
-                                GameObject laser = Instantiate(firingSystem.projectilePrefab, childFirePoint.position, Quaternion.identity);
-                                laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, firingSystem.projectileSpeed);
-                            }
-                        } else {
+                        if (!firingSystem.isDiagonal) {
                             GameObject laser = Instantiate(firingSystem.projectilePrefab, firePoint.position, Quaternion.identity);
-                            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(firingSystem.projectileRotation, firingSystem.projectileSpeed);
-
-                            GameObject laser2 = Instantiate(firingSystem.projectilePrefab, firePoint.position, Quaternion.identity);
-                            laser2.GetComponent<Rigidbody2D>().velocity = new Vector2(firingSystem.projectileRotation2, firingSystem.projectileSpeed);
+                            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, firingSystem.projectileSpeed);
+                        } else {
+                            if (firePoint.name == "Left") {
+                                GameObject laser = Instantiate(firingSystem.projectilePrefab, firePoint.position, Quaternion.AngleAxis(-15, Vector3.back));
+                                laser.GetComponent<Rigidbody2D>().velocity = new Vector2(-firingSystem.projectileSpeed / 3f, firingSystem.projectileSpeed);
+                            } else if (firePoint.name == "Right") {
+                                GameObject laser = Instantiate(firingSystem.projectilePrefab, firePoint.position, Quaternion.AngleAxis(15, Vector3.back));
+                                laser.GetComponent<Rigidbody2D>().velocity = new Vector2(firingSystem.projectileSpeed / 3f, firingSystem.projectileSpeed);
+                            }
                         }
                         FindObjectOfType<AudioManager>().Play("PlayerShoot");
                     }
@@ -63,7 +63,6 @@ public class Player : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
             needToGo = false;
-
             HideUpgradeCanvas();
         }
     }

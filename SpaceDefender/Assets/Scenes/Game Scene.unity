@@ -121,7 +121,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &126047252 stripped
+--- !u!114 &124007177 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1481212274, guid: de1877452569b4decaedca696bec2b28,
     type: 3}
@@ -133,12 +133,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &283510032 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5499568418669951311, guid: de1877452569b4decaedca696bec2b28,
+--- !u!114 &662643090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
     type: 3}
   m_PrefabInstance: {fileID: 2092828584378043747}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbcc9582372ec47e2b47bd4a05cf2a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &768309684
 GameObject:
   m_ObjectHideFlags: 0
@@ -4893,6 +4899,12 @@ Transform:
   m_Father: {fileID: 1913092153}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -270, y: 0, z: 0}
+--- !u!4 &782374559 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4224523596110655858, guid: de1877452569b4decaedca696bec2b28,
+    type: 3}
+  m_PrefabInstance: {fileID: 2092828584378043747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &807877027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2450680060030600796, guid: edf30277853d44e57bc48bb5f04bb860,
@@ -4905,24 +4917,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7468245307546432326}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1230447895 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5608707828561487865, guid: de1877452569b4decaedca696bec2b28,
-    type: 3}
-  m_PrefabInstance: {fileID: 2092828584378043747}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1364415064 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-    type: 3}
-  m_PrefabInstance: {fileID: 2092828584378043747}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbcc9582372ec47e2b47bd4a05cf2a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1412697979
 GameObject:
   m_ObjectHideFlags: 0
@@ -10033,7 +10027,7 @@ PrefabInstance:
     - target: {fileID: 699414138, guid: de1877452569b4decaedca696bec2b28, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1364415064}
+      objectReference: {fileID: 662643090}
     - target: {fileID: 699414138, guid: de1877452569b4decaedca696bec2b28, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LevelUpDiagonalLasers
@@ -10082,7 +10076,7 @@ PrefabInstance:
         type: 3}
       propertyPath: firingSystems.Array.data[2].firePoints.Array.data[0]
       value: 
-      objectReference: {fileID: 283510032}
+      objectReference: {fileID: 782374559}
     - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
       propertyPath: firingSystems.Array.data[2].projectileSpeed
@@ -10095,38 +10089,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
-      propertyPath: firingSystems.Array.data[2].projectileRotation
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[0].projectileRotation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[2].firePoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 1230447895}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[1].projectileRotation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[1].projectileRotation2
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[2].projectileRotation2
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092828583446903390, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
-      propertyPath: firingSystems.Array.data[0].projectileRotation2
-      value: 0
+      propertyPath: firingSystems.Array.data[2].isDiagonal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903391, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
@@ -10136,7 +10100,7 @@ PrefabInstance:
     - target: {fileID: 2092828583446903391, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.56
+      value: -11.67
       objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903391, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
@@ -10186,7 +10150,7 @@ PrefabInstance:
     - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
       propertyPath: diagonalLasers.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
@@ -10195,21 +10159,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
-      propertyPath: chargedLasers.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 993b1b64100f14e639fc3336dc546792,
-        type: 2}
-    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
-        type: 3}
       propertyPath: diagonalLasers.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 993b1b64100f14e639fc3336dc546792,
         type: 2}
     - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
+      propertyPath: diagonalLasers.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: aa35c7a68d8934222af5c7c79c82943e,
+        type: 2}
+    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: diagonalLasers.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ca4a3a951d044cd687f74a8cc471a0a,
+        type: 2}
+    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
       propertyPath: diagonalLasersText
       value: 
-      objectReference: {fileID: 126047252}
+      objectReference: {fileID: 124007177}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de1877452569b4decaedca696bec2b28, type: 3}
 --- !u!1001 &2450680060838346745

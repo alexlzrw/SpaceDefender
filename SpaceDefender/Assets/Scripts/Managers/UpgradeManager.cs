@@ -9,17 +9,14 @@ public class UpgradeManager : MonoBehaviour {
     [SerializeField] private int parallelLasersLevel = 0;
     [SerializeField] private int diagonalLasersLevel = 0;
     [SerializeField] private int chargedLasersLevel = 0;
-    [SerializeField] private int parallelChargedLasersLevel = 0;
 
     public UpgradeItem[] parallelLasers;
     public UpgradeItem[] diagonalLasers;
     public UpgradeItem[] chargedLasers;
-    public UpgradeItem[] parallelChargedLasers;
 
     public TextMeshProUGUI parallelLasersText;
     public TextMeshProUGUI diagonalLasersText;
     public TextMeshProUGUI chargedLasersText;
-    public TextMeshProUGUI parallelChargedLasersText;
 
     Player player;
 
@@ -76,8 +73,7 @@ public class UpgradeManager : MonoBehaviour {
         if (!IsUpgradeMaxLevel(diagonalLasersLevel, diagonalLasers.Length)) {
             diagonalLasersLevel++;
             diagonalLasersText.text = diagonalLasers[diagonalLasersLevel].ScoreCost.ToString();
-        }
-        else {
+        } else {
             diagonalLasersText.text = "MAX";
             diagonalLasersText.GetComponentInParent<Image>().color = Color.gray;
             diagonalLasersText.GetComponentInParent<Button>().enabled = false;
@@ -93,6 +89,5 @@ public class UpgradeManager : MonoBehaviour {
     private void UpdateUI() {
         parallelLasersText.text = parallelLasers[parallelLasersLevel].ScoreCost.ToString();
         chargedLasersText.text = chargedLasers[chargedLasersLevel].ScoreCost.ToString();
-        diagonalLasersText.text = diagonalLasers[diagonalLasersLevel].ScoreCost.ToString();
     }
 }
