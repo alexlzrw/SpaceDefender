@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameSession : MonoBehaviour
 {
 	int score = 0;
+    int bestScore = 0;
 
     public int enemyHealthLevel = 1;
     public int enemySpeedLevel = 1;
@@ -14,6 +15,10 @@ public class GameSession : MonoBehaviour
 
     public float timeToLevel = 100f;
     public float timeInSeconds = 0f;
+
+    private void Start() {
+        bestScore = PlayerPrefs.GetInt("bestScore");
+    }
 
     private void Awake() {
         SetUpSingleton();
@@ -54,6 +59,16 @@ public class GameSession : MonoBehaviour
     public int GetScore() {
         return score;	
 	}
+
+    public int BestScore() {
+        if (score > bestScore) {
+            PlayerPrefs.SetInt("bestScore", score);
+            PlayerPrefs.Save();
+            bestScore = PlayerPrefs.GetInt("bestScore");
+            return bestScore;
+        }
+        else return bestScore;
+    }
 
     public bool Buy(int cost) {
         if (cost > score) {
