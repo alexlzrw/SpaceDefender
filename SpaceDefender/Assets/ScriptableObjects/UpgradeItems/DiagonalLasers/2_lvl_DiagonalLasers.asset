@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: DiagonalLasers
   laserPrefab: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
     type: 3}
-  scoreCost: 500
+  scoreCost: 2000
   firePointsNames:
   - Diagonal
   projectileSpeed: 10

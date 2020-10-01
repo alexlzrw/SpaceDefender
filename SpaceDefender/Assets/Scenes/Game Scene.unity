@@ -10036,6 +10036,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 699414139, guid: de1877452569b4decaedca696bec2b28, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2092828583446903384, guid: de1877452569b4decaedca696bec2b28,
         type: 3}
       propertyPath: m_Color.a
@@ -10180,6 +10184,26 @@ PrefabInstance:
       propertyPath: diagonalLasersText
       value: 
       objectReference: {fileID: 124007177}
+    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: notEnoughScoreColor.r
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: notEnoughScoreColor.g
+      value: 0.38812745
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: notEnoughScoreColor.b
+      value: 0.38812745
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333201773666794151, guid: de1877452569b4decaedca696bec2b28,
+        type: 3}
+      propertyPath: notEnoughScoreColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de1877452569b4decaedca696bec2b28, type: 3}
 --- !u!1001 &2450680060838346745
