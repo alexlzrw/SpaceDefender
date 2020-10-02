@@ -1952,7 +1952,7 @@ MonoBehaviour:
     - {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e, type: 3}
     - {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e, type: 3}
     - {fileID: 7003113376843539253, guid: 8b96fd6a0af1a42f38f34a8af237bc0c, type: 3}
-    scoreCost: 64000000c80000002c010000
+    scoreCost: e8030000d007000088130000
     firePointNames:
     - TwoParallel
     - TwoParallel
@@ -1976,7 +1976,7 @@ MonoBehaviour:
     - {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e, type: 3}
     - {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e, type: 3}
     - {fileID: 7003113376843539253, guid: 8b96fd6a0af1a42f38f34a8af237bc0c, type: 3}
-    scoreCost: 64000000c80000002c010000
+    scoreCost: dc050000b80b000070170000
     firePointNames:
     - Diagonal
     - Diagonal
@@ -2000,7 +2000,7 @@ MonoBehaviour:
     - {fileID: 7003113376843539253, guid: 9a9f3ed8cfa3547b99473e4b654acff3, type: 3}
     - {fileID: 7003113376843539253, guid: 9a9f3ed8cfa3547b99473e4b654acff3, type: 3}
     - {fileID: 7003113376843539253, guid: 9a9f3ed8cfa3547b99473e4b654acff3, type: 3}
-    scoreCost: 64000000c80000002c010000
+    scoreCost: b80b000088130000581b0000
     firePointNames:
     - OneShot
     - OneShot
