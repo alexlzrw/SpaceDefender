@@ -269,8 +269,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8333201773666794151}
-        m_MethodName: LevelUpParallelLasers
-        m_Mode: 1
+        m_MethodName: LevelUpByIndex
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -399,7 +399,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 699414139}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8333201773666794151}
+        m_MethodName: LevelUpByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &736307267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,27 +1942,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbcc9582372ec47e2b47bd4a05cf2a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallelLasersLevel: 0
-  diagonalLasersLevel: 0
-  chargedLasersLevel: 0
-  parallelChargedLasersLevel: 0
-  parallelLasers:
-  - {fileID: 11400000, guid: 06d38f91824164f3e8ce8ca4cbdff688, type: 2}
-  - {fileID: 11400000, guid: 51fa1f4669c4a419cbd4db83d37506b2, type: 2}
-  - {fileID: 11400000, guid: d3aded68feed344f8a09df8cafada022, type: 2}
-  diagonalLasers: []
-  chargedLasers:
-  - {fileID: 11400000, guid: 88d2cbf22558a4b909f4fef31ee32787, type: 2}
-  - {fileID: 11400000, guid: 369f7212a83224ded80000e9036f9a18, type: 2}
-  - {fileID: 11400000, guid: 6d50095d3283c474cab803c219ff30d5, type: 2}
-  parallelChargedLasers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  parallelLasersText: {fileID: 1532009356}
-  diagonalLasersText: {fileID: 0}
-  chargedLasersText: {fileID: 1076943508}
-  parallelChargedLasersText: {fileID: 0}
+  parallelLasersIndex: 0
+  diagonalLasersIndex: 1
+  chargedLasersIndex: 2
+  upgradeItems:
+  - itemName: ParallelLasers
+    currentLevel: -1
+    laserPrefab:
+    - {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e, type: 3}
+    - {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e, type: 3}
+    - {fileID: 7003113376843539253, guid: 8b96fd6a0af1a42f38f34a8af237bc0c, type: 3}
+    scoreCost: e8030000d007000088130000
+    firePointNames:
+    - TwoParallel
+    - TwoParallel
+    - TwoParallel,TwoWings
+    projectileSpeed:
+    - 10
+    - 10
+    - 15
+    projectileFiringPeriod:
+    - 0.15
+    - 0.15
+    - 0.15
+    enoughScoreColor: {r: 0.24313726, g: 0.9098039, b: 0.8901961, a: 0.5882353}
+    notEnoughScoreColor: {r: 1, g: 0.48584908, b: 0.48584908, a: 0.5882353}
+    inactiveColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 0.5882353}
+    upgradeButton: {fileID: 466769876}
+    buttonText: {fileID: 1532009356}
+  - itemName: DiagonalLasers
+    currentLevel: -1
+    laserPrefab:
+    - {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e, type: 3}
+    - {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e, type: 3}
+    - {fileID: 7003113376843539253, guid: 8b96fd6a0af1a42f38f34a8af237bc0c, type: 3}
+    scoreCost: dc050000b80b000070170000
+    firePointNames:
+    - Diagonal
+    - Diagonal
+    - Diagonal
+    projectileSpeed:
+    - 10
+    - 10
+    - 15
+    projectileFiringPeriod:
+    - 0.15
+    - 0.15
+    - 0.15
+    enoughScoreColor: {r: 0.24313726, g: 0.9098039, b: 0.8901961, a: 0.5882353}
+    notEnoughScoreColor: {r: 1, g: 0.48584908, b: 0.48584908, a: 0.5882353}
+    inactiveColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 0.5882353}
+    upgradeButton: {fileID: 699414136}
+    buttonText: {fileID: 1481212274}
+  - itemName: ChargedLasers
+    currentLevel: -1
+    laserPrefab:
+    - {fileID: 7003113376843539253, guid: 9a9f3ed8cfa3547b99473e4b654acff3, type: 3}
+    - {fileID: 7003113376843539253, guid: 9a9f3ed8cfa3547b99473e4b654acff3, type: 3}
+    - {fileID: 7003113376843539253, guid: 9a9f3ed8cfa3547b99473e4b654acff3, type: 3}
+    scoreCost: b80b000088130000581b0000
+    firePointNames:
+    - OneShot
+    - OneShot
+    - TwoMiddleWings
+    projectileSpeed:
+    - 5
+    - 6
+    - 7
+    projectileFiringPeriod:
+    - 1
+    - 0.95
+    - 0.9
+    enoughScoreColor: {r: 0.24313726, g: 0.9098039, b: 0.8901961, a: 0.5882353}
+    notEnoughScoreColor: {r: 1, g: 0.48584908, b: 0.48584908, a: 0.5882353}
+    inactiveColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 0.5882353}
+    upgradeButton: {fileID: 2098581493}
+    buttonText: {fileID: 1076943508}
 --- !u!1 &2098581493
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,12 +2139,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8333201773666794151}
-        m_MethodName: LevelUpChargedLasers
-        m_Mode: 1
+        m_MethodName: LevelUpByIndex
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2113,7 +2179,7 @@ Transform:
   - {fileID: 5499568418669951311}
   - {fileID: 5608707828561487865}
   m_Father: {fileID: 4040269313906575827}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2092828583446903385
 GameObject:
@@ -2260,6 +2326,7 @@ MonoBehaviour:
   myPoint: {fileID: 0}
   firingSystems:
   - isActive: 1
+    isDiagonal: 0
     systemName: ParallelLasers
     projectilePrefab: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
       type: 3}
@@ -2269,11 +2336,22 @@ MonoBehaviour:
     projectileFiringPeriod: 0.15
     projectileFiringPeriodCounter: 0
   - isActive: 0
+    isDiagonal: 0
     systemName: ChargedLasers
     projectilePrefab: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
       type: 3}
     firePoints:
     - {fileID: 7870774772422029495}
+    projectileSpeed: 10
+    projectileFiringPeriod: 0.15
+    projectileFiringPeriodCounter: 0
+  - isActive: 0
+    isDiagonal: 1
+    systemName: DiagonalLasers
+    projectilePrefab: {fileID: 7003113376843539253, guid: b73524c80b8d343079e1f3844229978e,
+      type: 3}
+    firePoints:
+    - {fileID: 4224523596110655858}
     projectileSpeed: 10
     projectileFiringPeriod: 0.15
     projectileFiringPeriodCounter: 0
@@ -2369,6 +2447,7 @@ Transform:
   m_Children:
   - {fileID: 7870774772422029495}
   - {fileID: 1258981259077119490}
+  - {fileID: 2169496239943431788}
   - {fileID: 1566113110312330642}
   - {fileID: 4224523596110655858}
   m_Father: {fileID: 2092828583446903391}
@@ -2406,6 +2485,36 @@ Transform:
   m_Father: {fileID: 4040269313906575827}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6533455862069749684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7228157672916100392}
+  m_Layer: 8
+  m_Name: Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7228157672916100392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533455862069749684}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.42, y: -0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2169496239943431788}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6615013672908847208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,6 +2544,38 @@ Transform:
   m_Children:
   - {fileID: 8039224477466045252}
   - {fileID: 9043343680942820053}
+  m_Father: {fileID: 4040269313906575827}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6741477906495252500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2169496239943431788}
+  m_Layer: 8
+  m_Name: TwoMiddleWings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2169496239943431788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741477906495252500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7228157672916100392}
+  - {fileID: 3933715125803166223}
   m_Father: {fileID: 4040269313906575827}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2527,6 +2668,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4040269313906575827}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7745188156426212491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3933715125803166223}
+  m_Layer: 8
+  m_Name: Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3933715125803166223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7745188156426212491}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.42, y: -0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2169496239943431788}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8365398198375862779
 GameObject:
