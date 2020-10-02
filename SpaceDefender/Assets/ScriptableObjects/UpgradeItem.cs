@@ -1,15 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-[CreateAssetMenu(fileName = "New Upgrade Item", menuName = "Upgrade Item", order = 51)]
-public class UpgradeItem : ScriptableObject {
+//[CreateAssetMenu(fileName = "New Upgrade Item", menuName = "Upgrade Item", order = 51)]
+[System.Serializable]
+public class UpgradeItem {
     [SerializeField] private string itemName;
-    [SerializeField] private GameObject laserPrefab;
-    [SerializeField] private int scoreCost;
-    [SerializeField] private string[] firePointsNames;
-    [SerializeField] private float projectileSpeed = 10f;
-    [SerializeField] private float projectileFiringPeriod = .15f;
+    [SerializeField] private int currentLevel;
+    [SerializeField] private GameObject[] laserPrefab;
+    [SerializeField] private int[] scoreCost;
+    [SerializeField] private string[] firePointNames;
+    [SerializeField] private float[] projectileSpeed;
+    [SerializeField] private float[] projectileFiringPeriod;
+    [SerializeField] private Color enoughScoreColor;
+    [SerializeField] private Color notEnoughScoreColor;
+    [SerializeField] private Color inactiveColor;
+    [SerializeField] private GameObject upgradeButton;
+    [SerializeField] private TextMeshProUGUI buttonText;
 
     public string ItemName {
         get {
@@ -17,33 +26,91 @@ public class UpgradeItem : ScriptableObject {
 		}
 	}
 
-    public GameObject LaserPrefab {
+    public int CurrentLevel {
         get {
-            return laserPrefab;
+            return currentLevel;
 		}
 	}
 
-    public int ScoreCost {
+    public int NextLevel {
         get {
-            return scoreCost;
+            return currentLevel + 1;
 		}
 	}
 
-    public string[] FirePointsNames {
+    public GameObject NextLevelLaserPrefab {
         get {
-            return firePointsNames;
+            return laserPrefab[currentLevel + 1];
+		}
+	}
+
+    public int MaxLevel {
+        get {
+            return scoreCost.Length;
+		}
+	}
+
+    public string NextLevelFirePointNames {
+        get {
+            return firePointNames[currentLevel + 1];
+		}
+	}
+
+    public float NextLevelProjectileSpeed {
+        get {
+            return projectileSpeed[currentLevel + 1];
+		}
+	}
+
+    public float NextLevelProjectileFiringPeriod {
+        get {
+            return projectileFiringPeriod[currentLevel + 1];
+		}
+	}
+
+    public Color EnoughScoreColor {
+        get {
+            return enoughScoreColor;
+		}
+	}
+
+    public Color NotEnoughScoreColor {
+        get {
+            return notEnoughScoreColor;
+		}
+	}
+
+    public Color InactiveColor {
+        get {
+            return inactiveColor;
+		}
+	}
+
+    public Button UpgradeButton {
+        get {
+            return upgradeButton.GetComponent<Button>();
+		}
+	}
+
+    public Image ButtonBackImage {
+        get {
+            return upgradeButton.GetComponent<Image>();
+		}
+	}
+
+    public TextMeshProUGUI ButtonText {
+        get {
+            return buttonText;
+		}
+	}
+
+    public int NextLevelScoreCost {
+        get {
+            return scoreCost[currentLevel + 1];
         }
-	}
+    }
 
-    public float ProjectileSpeed {
-        get {
-            return projectileSpeed;
-		}
-	}
-
-    public float ProjectileFiringPeriod {
-        get {
-            return projectileFiringPeriod;
-		}
+    public void IncrementCurrentLevel() {
+        currentLevel++;
 	}
 }

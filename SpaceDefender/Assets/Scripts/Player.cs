@@ -135,10 +135,11 @@ public class Player : MonoBehaviour {
         foreach (FiringSystem firingSystem in firingSystems) {
             if (firingSystem.systemName == upgradeItem.ItemName) {
                 firingSystem.isActive = true;
-                firingSystem.projectilePrefab = upgradeItem.LaserPrefab;
+                firingSystem.projectilePrefab = upgradeItem.NextLevelLaserPrefab;
 
                 firingSystem.firePoints.Clear();
-                foreach (string firePointName in upgradeItem.FirePointsNames) {
+                string[] parsedFirePoints = upgradeItem.NextLevelFirePointNames.Split(',');
+                foreach (string firePointName in parsedFirePoints) {
                     Transform newFirePoints = GameObject.Find(firePointName).transform;
                     if (newFirePoints.childCount > 0) {
                         foreach (Transform newFirePoint in newFirePoints) {
@@ -149,8 +150,8 @@ public class Player : MonoBehaviour {
                     }
                 }
 
-                firingSystem.projectileSpeed = upgradeItem.ProjectileSpeed;
-                firingSystem.projectileFiringPeriod = upgradeItem.ProjectileFiringPeriod;
+                firingSystem.projectileSpeed = upgradeItem.NextLevelProjectileSpeed;
+                firingSystem.projectileFiringPeriod = upgradeItem.NextLevelProjectileFiringPeriod;
             }
 		}
 	}
